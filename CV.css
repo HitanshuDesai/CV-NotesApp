@@ -1,0 +1,64 @@
+*{
+    box-sizing: border-box;
+}
+.Name{
+    text-align: center;
+    color: antiquewhite;
+    display: flex;
+}
+.Designation{
+    text-align: center;
+    color:antiquewhite;
+}
+#HR01,#Name,#HR02{
+    flex:33%;
+}
+.header{
+    background-color:white;
+    text-align: center;
+    width:100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.backgroundimage{
+    background-image: url("Background Image.jpg");
+    background-repeat:repeat-x;
+    background-size: contain;
+}
+.About{
+    text-align: center;
+}
+.content{
+    display:flex;
+}
+.Contact{
+    flex:50%;
+    text-align: right;
+    padding-top: 20px;
+    padding-right: 20px;
+    border-right: 1px solid black;
+}
+.Details{
+    text-align: center;
+}
+
+.ProfessionalExperience{
+    flex:50%;
+    padding: 10px;
+    overflow-wrap: break-word;
+}
+
+#EducationOne{
+    list-style-type: none;
+    margin:0;
+    padding:0;
+    overflow:hidden;
+}
+.EducationOne{
+    display:flex;
+}
+#EducationOne li{
+    flex:50%;
+    display: inline;
+    text-align: left;
+}

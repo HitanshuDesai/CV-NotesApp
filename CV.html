@@ -1,0 +1,154 @@
+<html>
+    <head>
+        <link rel = "stylesheet"
+        type = "text/css"
+        href = "CV.css" />
+    </head>
+    <body>
+        <div class="header">
+            <div class="backgroundimage">
+            <div class="Name"><h2 id="Name">Hitanshu Desai</h2><span id="HR02 style"></span></div>
+            <div class="Designation"><p>Intern/Trainee</p></div>
+            <div><img src="CV.jpg" alt="Image" style="width:150px;height:150px;border-radius:50%"></div>
+        </div></div>
+        <div class="About" id="About">
+        </div>
+        <div class="content">
+            <table class="Contact">
+                <tr>
+                    <th><h3><i>CONTACT</i></h3></th>
+                </tr>
+                <tr>
+                    <td><p class="Details" id="Address"></p></td>
+                </tr>
+                <tr>
+                    <td><p class="Details" id="Mobile"></p></td>
+                </tr>
+                <tr>
+                    <td><p class="Details" id="Telephone"></p></td>
+                </tr>
+                <tr>
+                    <td><p class="Details" id="Email"></p></td>
+                </tr>
+                <tr>
+                    <td><div class="Competencies">
+                         <h3><i>COMPETENCIES</i></h3>
+                        </div></td>
+                    
+                            </div></tr>
+                            <tr>
+                                <td>
+                                        <div class="buttons">
+                                                <svg height="350" width="540">
+                                                <circle cx="60" cy="50" r="50" fill="lightgrey"/>
+                                                <path d="M60 0 L60 50 L110 50
+                                                A50,50 0 1,1 60,0" id="Circle01" />
+                                                <circle cx="60" cy="50" r="40" fill="orange"/>
+                                                <text x="40" y="55" fill="black">HTML</text>
+
+                                                <circle cx="260" cy="50" r="50" fill="lightgrey"/>
+                                                <path d="M260 0 L260 50 l20 45.82
+                                                A50,50 0 1,1 260,0"/>
+                                                <circle cx="260" cy="50" r="40" fill="orange"/>
+                                                <text x="240" y="55" fill="black">CSS</text>
+
+                                                <circle cx="460" cy="50" r="50" fill="lightgrey"/>
+                                                <path d="M460 0 L460 50 l0.1 -49.999
+                                                A50,50 0 1,1 460,0"/>
+                                                <circle cx="460" cy="50" r="40" fill="orange"/>
+                                                <text x="445" y="55" fill="black">JS</text>
+
+                                                <circle cx="60" cy="250" r="50" fill="lightgrey"/>
+                                                <path d="M60 200 L60 250 L110 250
+                                                A50,50 0 1,1 60,200" id="Circle01" />
+                                                <circle cx="60" cy="250" r="40" fill="lightblue"/>
+                                                <text x="40" y="255" fill="black">SVG</text>
+
+                                                <circle cx="260" cy="250" r="50" fill="lightgrey"/>
+                                                <path d="M260 200 L260 250 l20 45.82
+                                                A50,50 0 1,1 260,200"/>
+                                                <circle cx="260" cy="250" r="40" fill="lightblue"/>
+                                                <text x="225" y="255" fill="black">BootStrap</text>
+
+                                                <circle cx="460" cy="250" r="50" fill="lightgrey"/>
+                                                <path d="M460 200 L460 250 l32 -38.41
+                                                A50,50 0 1,1 460,200"/>
+                                                <circle cx="460" cy="250" r="40" fill="lightblue"/>
+                                                <text x="440" y="255" fill="black">NodeJS</text>
+                                                </svg>
+                                                </div>
+                                </td>
+                            </tr>
+                    <tr>
+                    <td><div class="Competencies">
+                            <h3><i>LANGUAGUES</i></h3>
+                           </div></td>
+                           </tr>
+                           <tr>
+                               <td>
+                                    <svg height="100" width="540">
+                                            <circle cx="60" cy="50" r="50" fill="lightgrey"/>
+                                            <path d="M60 0 L60 50 L110 50
+                                            A50,50 0 1,1 60,0" id="Circle01" />
+                                            <circle cx="60" cy="50" r="40" fill="lightgreen"/>
+                                            <text x="50" y="55" fill="black">C</text>
+
+                                            <circle cx="260" cy="50" r="50" fill="lightgrey"/>
+                                            <path d="M260 0 L260 50 l20 45.82
+                                            A50,50 0 1,1 260,0"/>
+                                            <circle cx="260" cy="50" r="40" fill="lightgreen"/>
+                                            <text x="240" y="55" fill="black">C++</text>
+
+                                            <circle cx="460" cy="50" r="50" fill="lightgrey"/>
+                                            <path d="M460 0 L460 50 l32 -38.41
+                                            A50,50 0 1,1 460,0"/>
+                                            <circle cx="460" cy="50" r="40" fill="lightgreen"/>
+                                            <text x="440" y="55" fill="black">Python</text>
+                               </td>
+                           </tr>
+                </table>
+            <div class="ProfessionalExperience">
+                <h3><i>PROFESSIONAL EXPERIENCE</i></h3>
+                <div><p id="JobOne"></p>
+                <p id="JobOneDesc"></p>
+                </div>
+                        
+                <div>
+                    <h3><i>EDUCATION</i></h3>
+                <div><ul class="EducationOne" id="EducationOne"></ul>
+                </div>
+                </div>
+            </div>
+        </div>
+        <script>var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                // Typical action to be performed when the document is ready:
+               var response =JSON.parse(xhttp.responseText);
+               var Contacts=response.Contacts;
+               var Jobs=response.Jobs;
+               var Education=response.Education;
+           
+                document.getElementById("Address").innerHTML='<b style="float:left,margin-left:10%">'+'Address: '+'</b>'+'<span style="float:left,overflow-wrap:break-word">'+ Contacts.Address+'</span>';
+                document.getElementById("Mobile").innerHTML='<b style="float:left,margin-left:10%">'+'Mobile: '+'</b>'+'<span style="float:left,overflow-wrap:break-word">'+Contacts.Mobile+'</span>';
+                document.getElementById("Telephone").innerHTML='<b style="float:left,margin-left:10%">'+'Telephone: '+'</b>'+'<span style="float:left,overflow-wrap:break-word">'+Contacts.Telephone+'</span>';
+                document.getElementById("Email").innerHTML='<b style="float:left,margin-left:10%">'+'Email: '+'</b>'+'<span style="float:left,overflow-wrap:break-word">'+Contacts.Email+'</span>';
+              
+             var output1=''
+             for (i=0;i<Jobs.length;i++){
+                 output1+='<b>'+Jobs[i].Company+' | '+Jobs[i].Designation+' | '+Jobs[i].Year+'</b>'+'<br>'+Jobs[i].Description+'<br>'+'<br>'
+             }
+                 document.getElementById("JobOne").innerHTML=output1
+
+             var output2=''
+             for (j=0;j<Education.length;j++){
+                 output2+='<li>'+'<b>'+Education[j].Year+'-'+Education[j].Degree+'-'+'</br>'+Education[j].Institute+'-'+'<br>'+Education[j].Grade+'</b>'+'</br>'+'<br>'+Education[j].Description+'</li>'+'<br>'
+             }
+              document.getElementById("EducationOne").innerHTML=output2
+            }
+        };
+              xhttp.open("GET", "CV.json", true);
+                xhttp.send();
+             </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+{
+          "Contacts":{
+          "Address":"A/15/57,Rajawadi,CHS Nagar,Ghatkopar(East),Mumbai-400077",
+          "Mobile":9790072328,
+          "Telephone":21028520,
+          "Email":"hitanshu.desai123@gmail.com"
+    },
+    "Jobs":[
+                {
+                "Company":"Reliance Industries",
+                "Designation":"Intern",
+                "Year":2017,
+                "Description":"It was a 1 month internship at the Reliance Manufacturing Division,Silvassa Branch.The aim of the internship was to observe and learn the functionings of a large scale industry and how the various sectors work in coordination to maintain the level of quality and efficiency expected from a large manufacturing company.  "
+                },
+                {
+                    "Company":"Service Saathi",
+                    "Designation":"Intern",
+                    "Year":2018,
+                    "Description":"Service Saathi is a start-up that began in January of 2006.It is a company that provide services to homes,right from installing AC's to reapir of electronic appliances.My job during the one month stya was to manage the sales team,help in doing the finances and come with partnership ideas for the company expansion."
+                },
+                {
+                    "Company":"PriceWaterhouseCoopers",
+                    "Designation":"Intern/Associate",
+                    "Year":"2019-",
+                    "Description":"Started a 6 month internship at PricewaterhouseCoopers in the Advisory division in January 2019.I was in the technology consulting team working on various projects in IOT,ML and front end development."
+                }
+            ],
+        
+        "Education":[
+                {
+                "Institute":"Sri Sathya Sai Higher Secondary School",
+                "Year":2011,
+                "Degree":"10th",
+                "Grade":"CGPA:10",
+                "Description":"Spent 10 years in a boarding school in Andhra Pradesh 1000kms from home learning about subjects and life through values."
+                },
+                {
+                    "Institute":"Vellore Institue of Technology",
+                    "Year":2019,
+                    "Degree":"B.Tech",
+                    "Grade":"CGPA:8.74",
+                    "Description":"Learnt the core of mechanical subjects along with the electives of interest like business analytics etc.Was also a part of the NGO Juvenile Care that helps orphange kids."
+                }
+            ]}
