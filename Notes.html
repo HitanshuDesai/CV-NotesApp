@@ -1,0 +1,189 @@
+<html>
+                    <head>
+                            <link rel = "stylesheet"
+                            type = "text/css"
+                            href = "Notes.css" />
+                    </head>
+                    <body>
+                        <div class="TopRow">
+                            <!--<img src="PwC Logo.png" alt="PwC Logo" id="Logo">-->
+                         <h1 id="Heading">PwC Notes</h1>
+                        </div>
+                        <div class="Page">
+                        <div class="sidenav">
+                         <table>
+                             <!--<tr class="links"><td><a class='Button'; onclick="">Home</a></td></tr>-->
+                             <tr class="links"><td><a class='Button'; onclick="Note()">Notes</a></td></tr>
+                             <tr class="links"><td><a class='Button'; onclick="ToDo()">To-Do List</a></td></tr>
+                         </table>
+                        </div>
+                        <div class="ContentArea" id="ContentArea">
+                        <div class="InputBox" id="AddNotes">
+                            <form>
+                                <input type="text" name="Add.." id="InputBox01" placeholder="Add Note..">
+                            </form>
+                                <button onclick="AddNote()" id="AddBtn01" >Add..</button>
+                            
+                         <div contenteditable="false">
+                            <div  class="Notes01" id="Notes">
+                            </div>
+                         </div>
+                        </div>
+                        <div class="InputBox" id="AddTodo">
+                            <form>
+                            <input type="text" name="Add.." id="InputBox02" placeholder="Add To-Do item..">
+                        </form>
+                            <button onclick="AddToDo()" id="AddBtn02" >Add..</button>
+                            
+                            <div contenteditable="false">
+                              <div  class="ToDo01" id="ToDo">
+                              </div>
+                        </div>
+                    </div>
+                        
+                </div>
+                        
+            </div>
+                        <script>
+                            document.getElementById("ContentArea").style.display="grid";
+                            function Note(){
+                                document.getElementById("AddNotes").style.display="list-item";
+                                document.getElementById("AddTodo").style.display="none";
+                            }
+                                
+                            function AddNote(){
+                                //var li=document.createElement("li");
+                                //var output=''
+                                var inputValue=document.getElementById("InputBox01").value;
+                                if(inputValue==""){
+                                    alert("Input Note")
+                                }
+                                else{
+                                //var Value=document.createTextNode(inputValue);
+                                //li.appendChild(Value);
+                                //document.getElementById("Notes").appendChild(li);
+                                //var MyNoteList;
+                                //MyNoteList=document.getElementsByTagName("li");
+                            //{
+                               // for(i=0;i<MyNoteList.length;i++){
+                                //MyNoteList.forEach(function(){
+                                //var div=document.createElement("div");
+                                //var x=document.createTextNode("\u00D7");//creating the x symbol
+                                //div.className="XSymbolNote";
+                                //div.appendChild(x);
+                                //MyNoteList[i].insertBefore(div,MyNoteList[i].firstChild);
+                                var x;
+                                x='<div class="notesinstance" contenteditable="false">'+'<span class="XSymbolNote" contenteditable="false">x</span>'+'<div class="NotesList" contenteditable="true">'+inputValue+'</div></div>';
+                                document.getElementById("Notes").innerHTML+=x;
+                                //var NotesEdit=document.querySelector(".XSymbolNote");
+                                //NotesEdit.contentEditable=false;
+                                
+        
+                                
+                                
+                                var Noteslist = document.querySelector(".Notes01");
+                                Noteslist.onclick = function() {
+                
+                //or you can use list.setAttribute("contentEditable", true);
+                                 Noteslist.contentEditable = true;
+                        }
+                    }
+                    
+            
+                                var close=document.getElementsByClassName("XSymbolNote");
+                                for (j = 0; j < close.length; j++)
+                             {
+                                close[j].onclick = function() 
+                             {
+                                var div = this.parentElement;
+                                //div.style.display = "none";
+                               div.parentNode.removeChild(div);
+                              // document.getElementsByTagName("li").contentEditable = "true";
+                             }
+                            }
+                            document.getElementById("InputBox01").value="";
+                        }
+                        
+                        
+                                //document.getElementById("Notes").innerHTML=output
+                                function ToDo(){
+                                        document.getElementById("AddNotes").style.display="none";
+                                        document.getElementById("AddTodo").style.display="list-item";
+                                    }
+                                function AddToDo(){
+                                //var li=document.createElement("li");
+                                //var output=''
+                                var inputValue=document.getElementById("InputBox02").value;
+                                if(inputValue==""){
+                                    alert("Input To-Do item")
+                                }
+                                else{
+                                //var Value=document.createTextNode(inputValue);
+                                
+                                //li.appendChild(Value);
+                                //document.getElementById("ToDo").appendChild(li);
+                                //document.getElementById("ToDo").appendChild(li);
+                                //var MyToDoList=document.getElementsByTagName("li");
+                                //{
+                                //var i;
+                                //for(i=0;i<MyToDoList.length;i++){
+                                //var div=document.createElement("div");
+                                //var x=document.createTextNode("\u00D7");//creating the x symbol
+                                //div.className="XSymbolToDo";
+                                //div.appendChild(x);
+                                //MyToDoList[i].appendChild(div);
+                                var x;
+                                x='<div contenteditable="false"><span class="XSymbolToDo" contenteditable="false">'+"x"+'</span><div class="ToDoItem" contenteditable="true">'+inputValue+'</div></div>'
+                                document.getElementById("ToDo").innerHTML+=x;
+                                var ToDoEdit=document.querySelector(".XSymbolToDo");
+                                ToDoEdit.contentEditable=false;
+                                //console.log(x,inputValue);
+                                
+                                //var list = document.querySelector(".ToDo01");
+                                //list.onclick = function() {
+                
+                //or you can use list.setAttribute("contentEditable", true);
+                                 //list.contentEditable = true;
+                                //}
+                            }
+                        
+                               
+                                var close=document.getElementsByClassName("XSymbolToDo");
+                                for (j = 0; j < close.length; j++) {
+                                close[j].onclick = function() {
+                                var div = this.parentElement;
+                               div.parentNode.removeChild(div);
+                                }
+                        
+                    
+                }
+                document.getElementById("InputBox02").value="";
+                
+            }
+            document.getElementById("InputBox01").addEventListener("keydown",function(event){
+                if(event.keyCode===13){
+                    event.preventDefault();
+                    document.getElementById("AddBtn01").click();
+                }
+            });
+            document.getElementById("InputBox02").addEventListener("keydown",function(event){
+                if(event.keyCode===13){
+                    event.preventDefault();
+                    document.getElementById("AddBtn02").click();
+                }
+            });
+            document.getElementById("Notes").addEventListener("keydown",function(event){
+                if(event.keyCode===13){
+                    event.preventDefault();
+                    return false;
+                }
+            });
+            document.getElementById("ToDo").addEventListener("keydown",function(event){
+                if(event.keyCode===13){
+                    event.preventDefault();
+                    return false;
+                }
+                });
+            </script>
+        </body>
+</html>
